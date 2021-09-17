@@ -1,6 +1,7 @@
 #!bin/bash
 
-file_name=$0
+file_name= $(dirname $0)
+echo $file_name
 NUMBER_ARGS=1
 
 if [[ $# -lt NUMBER_ARGS ]]; then
@@ -9,7 +10,7 @@ if [[ $# -lt NUMBER_ARGS ]]; then
 fi
 
 if [ -e ~/Desktop/$1 ]; then
-	read -p 'You want to delete eveything inside the file? [y]/[n]' answer
+	read -p 'You want to delete everything inside the file? [y]/[n]' answer
 fi
 
 mkdir -p ~/Desktop/$1
@@ -20,7 +21,7 @@ cp ~/Desktop/init_projects/Default_files/utils.c ~/Desktop/$1/src/
 
 touch ~/Desktop/$1/includes/$1.h
 
-Project_name=toupper($1)
+Project_name=$1
 # name=($(tr [:lower:] [:upper:] ${Project_name}))
 echo ${Project_name} | tr [:lower:] [:upper:] 
 
