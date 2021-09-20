@@ -1,6 +1,6 @@
 #!bin/bash
 
-file_name= $(dirname $0)
+file_name= 'dirname $0'
 echo $file_name
 NUMBER_ARGS=1
 
